@@ -32,11 +32,11 @@ def solve(cities):
 		return n
 
 	def df(N):
-		def df_sub(f, path):
+		def df_sub(n, path):
 			global min_length, min_path
 			min_length = 1e100
 			min_path =[]
-			if N == f:
+			if N == n:
 				new_len = path_length(path)
 				if new_len < min_length:
 					min_length = new_len
@@ -44,16 +44,15 @@ def solve(cities):
 			else:
 				for x in range(1, N):
 					if x not in path:
-						if f != 2 or path[0] > x:
+						if n != 2 or path[0] > x:
 							path.append(x)
-							df_sub(f + 1, path)
+							df_sub(n + 1, path)
 							path.pop()
 		global min_length, min_path
-		min_length = 1e100
-		min_path = []
 		for x in range(1, N):
 			path=[x,0]
 			df_sub(2, path)
+		print (min_length)
 		return min_path
 	return df(N)
 
