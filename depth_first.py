@@ -61,5 +61,4 @@ def solve(cities):
 if __name__ == '__main__':
 	assert len(sys.argv) > 1
 	solution = solve(read_input(sys.argv[1]))
-	#print_solution(solution)
-	print (solution)
+	print_solution(solution)
