@@ -17,7 +17,7 @@ def solve(cities):
     for i in range(N):
         for j in range(N):
             dist[i][j] = dist[j][i] = distance(cities[i], cities[j])
-    print (dist)
+    
     current_city = 0
     unvisited_cities = set(range(1, N))
     solution = [current_city]
