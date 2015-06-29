@@ -31,14 +31,12 @@ def solve(cities):
 				if new_len < min_length:
 					min_length = new_len
 					min_path = path[:]
-					print (min_length)
 			else:
 				for x in range(1, N): 
 					if x not in path:
-						if n != 2 or path[0] > x:
-							path.append(x)
-							df_sub(n + 1, path)
-							path.pop()
+						path.append(x)
+						df_sub(n + 1, path)
+						path.pop()
 		global min_length, min_path
 		min_length = 1e100
 		min_path =[]
