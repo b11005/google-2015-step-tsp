@@ -1,7 +1,7 @@
 import sys
 import math
 
-from common import print_solution, read_input
+from common import print_solution, read_input, format_solution
 
 
 def distance(city1, city2):
@@ -15,34 +15,25 @@ def solve(cities):
 	for i in range(N):
 		for j in range(N):
 			dist[i][j] = dist[j][i] = distance(cities[i], cities[j])
-	
-	current_city = 0
-	unvisited_cities = set(range(1, N))
-	solution = [current_city]
-	
-	def distance_from_current_city(to):
-		return dist[current_city][to]
 
 	def path_length(path):
-		n = 0
-		i = 1
+		node = 0
 		for i in range(1, len(path)):
-			n += dist[path[i - 1]][path[i]]
-		n += dist[path[0]][path[-1]]
-		return n
+			node += dist[path[i - 1]][path[i]]
+		node += dist[path[0]][path[-1]]
+		return node
 
 	def df(N):
 		def df_sub(n, path):
 			global min_length, min_path
-			#min_length = 1e100
-			#min_path =[]
 			if N == n:
 				new_len = path_length(path)
 				if new_len < min_length:
 					min_length = new_len
 					min_path = path[:]
+					print (min_length)
 			else:
-				for x in range(1, N):
+				for x in range(1, N): 
 					if x not in path:
 						if n != 2 or path[0] > x:
 							path.append(x)
