@@ -24,12 +24,15 @@ def solve(cities):
 
     def distance_from_current_city(to):
         return dist[current_city][to]
+    total=0
 
     while unvisited_cities:
         next_city = min(unvisited_cities, key=distance_from_current_city)
+        total+=dist[current_city][next_city]
         unvisited_cities.remove(next_city)
         solution.append(next_city)
         current_city = next_city
+    print (total)
     return solution
 
 

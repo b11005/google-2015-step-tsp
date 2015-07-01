@@ -1,5 +1,6 @@
 import sys
 import math
+import csv
 
 from common import print_solution, read_input, format_solution
 
@@ -52,3 +53,8 @@ if __name__ == '__main__':
 	assert len(sys.argv) > 1
 	solution = solve(read_input(sys.argv[1]))
 	print_solution(solution)
+	"""f=open(sys.argv[2],"w")
+	writer=csv.writer(f,lineterminator='\n')
+	writer.writerow(format_solution(solution))
+	
+	f.close()"""

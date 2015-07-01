@@ -48,9 +48,8 @@ if __name__ == '__main__':
     print_solution(solution)
     '''f=open(sys.argv[2],"w")
     writer=csv.writer(f,lineterminator='\n')
-    #for i in range(len(solution)):
-        #writer.writerow(solution[i])
+    for i in range(len(solution)-1):
+        writer.writerow(solution)
     writer.writerow(solution(solution))
     
     f.close()'''
-
