@@ -52,7 +52,8 @@ def solve(cities):
     	return total
 
     def annealing(T, cool=0.99, step=1):
-    	T=10000
+    	T=100000
+    	
     	while T>0.0001:
     		i=random.randint(0, len(solution)-1)
     		#parameter=(i-0.5)*step
