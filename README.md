@@ -263,3 +263,11 @@ Hidden.
 ----
 
 This assignment is heavily inspired by [Discrete Optimization Course on Coursera](https://www.coursera.org/course/optimization).
+
+気づいたこと
+・総当たりでは、N=16でもうすでに計算量が16!で天文学的な数字になってしまうので、精度は良いが、答えを得ることが出来ない。
+・次に、はらけんさんの言っていたクロスになっているところを直す2-optを試してみると、アルゴリズムはほんとうにはらけんさんの言っていたことそのままで実装でき、動いてくれたし、結果も良かった。randomよりもgreedyとの相性が良いみたい。
+・焼きなまし法は理解するのに時間がかかった。実装してみたが、現段階では結果が伴っていない。
+
+私の結論
+2-optが割と簡単に実装できて、短い経路が計算できた。
