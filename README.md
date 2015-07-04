@@ -264,6 +264,8 @@ Hidden.
 
 This assignment is heavily inspired by [Discrete Optimization Course on Coursera](https://www.coursera.org/course/optimization).
 
+総当たり(depth_first.py) 2-opt (fix_cross.py, fixCross_random.py) 焼きなまし法 (simulated.py)　＊これ以外のプログラムは全く出来ていません
+
 気づいたこと
 ・総当たりでは、N=16でもうすでに計算量が16!で天文学的な数字になってしまうので、精度は良いが、答えを得ることが出来ない。
 ・次に、はらけんさんの言っていたクロスになっているところを直す2-optを試してみると、アルゴリズムはほんとうにはらけんさんの言っていたことそのままで実装でき、動いてくれたし、結果も良かった。randomよりもgreedyとの相性が良いみたい。
